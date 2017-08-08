@@ -4,7 +4,7 @@ var center = c.width / 2;
 
 //Select the following Elements using the querySelector function
 
-var carWidth;
+var carWidth = document.querySelector('#car-width > input');
 
 var wheelDistance;
 
@@ -48,17 +48,17 @@ console.log(protocar);
 var car = {
     ft: {
         color: "#000000",
-        radius: 100,
-        x: 550,
-        y: 550
+        radius: '100',
+        x: '550',
+        y: '550'
 
     },
 
     rt: {
         color: "#000000",
-        radius: 100,
-        x: 350,
-        y: 550
+        radius: '100',
+        x: '350',
+        y: '550'
 
     },
 
@@ -70,18 +70,17 @@ var car = {
     },
 
     color: "#ff0000",
-    front: 100,
-    rear: 100,
-    roof: 100,
-    __proto__: Object,
-    topLimit: "550",
-    width: 400
+    front: '100',
+    rear: '100',
+    roof: '100',
+    topLimit: '550',
+    width: '400'
 
 
 };
 
 
-
+var car = new ProtoCar();
 var timer = setInterval(animate, 1000 / 60);
 
 function animate()
@@ -89,19 +88,19 @@ function animate()
     ctx.clearRect(0, 0, c.width, c.height);
 
     //call the drawCar() function and pass it your car object
-
+        drawCar(car);
     //Assign the colorInput's value to the car's color property
-
+        car.color = colorInput.value;
     //convert the roofSlider's value to a number and assign it to the car's roof property
-
+        car.roof = roofSlider.value;
     //convert the frontSlider's value to a number and assign it to the car's front property
-
+        car.front = frontSlider.value;
     //convert the rearSlider's value to a number and assign it to the car's rear property
-
+        car.rear = rearSlider.value;
     //convert the carWidth's value to a number and assign it to the car's width property
-
+        car.width = carWidth.value;
     //set the roof, front and rear sliders' .max attributes to the car's topLimit property
-
+        
     //set the car's front and rear tires' radius properties equal to the ft and rt slider's values
 
     //create a variable called wd and assign the wheelDistance slider's value to it as a Number.
