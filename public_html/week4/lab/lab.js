@@ -11,8 +11,7 @@ function addText() {
     var items = [];
     var str = "";
     var ttl = 0;
-    var cntr = 0;
-    var average = 0;
+    
     result = parseInt(result);
     
     str += '<table border="1">';
@@ -24,7 +23,7 @@ function addText() {
         for (let col = 0; col < result; col++) {
             items[row][col] = randomNumber(1,100);
             
-            ttl + average;
+            ttl += items[row][col];
             
             if ( items[row][col] % 3 === 0){
             
@@ -42,9 +41,12 @@ function addText() {
         }
         str += '</tr>';
     }
-
+    
     str += '</table>';
+    ttl = ttl/(result * result);
+    str += '<p>' + " Your average: " + ttl + '</p>';
     div.innerHTML = str;
+    
     
 
 
