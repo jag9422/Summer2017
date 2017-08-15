@@ -30,6 +30,8 @@ function showCalendar (mth, yr) {
     let firstDayOfWeek = d.getDay();
 
     /* this is where you'll generate the grid, for now I will just show first day of week */
+    
+    
     let str = '<ul>';
     str += `<li>Number of days in the month: ${numberOfDaysInMonth} </li>`;
     str += `<li>First day of the week: ${firstDayOfWeek} (${daysOfTheWeek[firstDayOfWeek]})</li>`;
