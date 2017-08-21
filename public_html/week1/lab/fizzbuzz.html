@@ -11,8 +11,22 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
-        
-        
+        <script type = "text/javascript">
+            for (let x = 0; x < 100; x++)
+            {
+                if (x % 2 === 0 && x % 3 !== 0) {
+                    console.log("fizz");
+                } else if (x % 3 === 0 && x % 2 !== 0) {
+                    console.log("buzz");
+                } else if (x % 2 === 0 && x % 3 === 0) {
+                    console.log("fizz buzz");
+                } else {
+                    console.log("undefined");
+                }
+            }
+            console.log(x);
+
+
+        </script>
     </body>
 </html>

@@ -1,4 +1,3 @@
-
 var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 $(document).ready(function () {
@@ -42,31 +41,38 @@ function showCalendar(mth, yr) {
 
 
 
-    for (let days = 1 - firstDayOfWeek; days < numberOfDaysInMonth; days++) {
+ for (let days = (1 - firstDayOfWeek); days <= numberOfDaysInMonth; days++) {
 
-        if (firstDayOfWeek < days) {
+        if (days > 0)
+        {
             str += `<div class="day"> ${days} </div>`;
-        } else {
+        } else
+        {
             str += `<div class="day"></div>`;
         }
 
-
-        if (days % 7 === 0) {
+        if ((days + firstDayOfWeek) % 7 === 0)
+        {
             str += `</div>`;
             str += `<div class="row">`;
 
         }
 
-
-
-
-
-
     }
 
     str += `</div>`;
+
     $('#results').html(str);
+
+
 
 }
 
+$(`#yes`).on('click',function() {
+    $('.day').css("background-color", "green"); 
+}); 
+
+$(`#no`).on('click', function() {
+    $('.day').css("background-color", "red"); 
+});
 
