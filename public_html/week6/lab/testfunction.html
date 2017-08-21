@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        Number  <input name="num" type="text" />
+        <button>test</button>
+
+        <script>
+
+            let submitBtn = document.querySelector('button');
+
+            submitBtn.addEventListener('click', checkInput );
+
+            function checkInput() {
+                let numberOnlyRE = /^[0-9]+$/;
+                let inputField = document.querySelector('input[name=num]');
+
+
+                if (numberOnlyRE.test(inputField.value)) {
+                    console.log('test that is\'s true');
+                    inputField.style.borderColor = 'green';
+
+                }else {
+                    console.log('test that is\'s false');
+                    inputField.style.borderColor = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
