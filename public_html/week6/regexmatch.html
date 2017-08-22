@@ -9,14 +9,15 @@
     <body>
         <div>TODO write content</div>
         <script>
+            let submitBtn = document.querySelector('button');
+
+            submitBtn.addEventListener('click');
 
             var str = 'Today we are matching any number 1 through 9 or 100 through 999.';
 
             var machesFound = str.match(/[0-9]+/g);
 
-            console.log(machesFound); // Notice that it only finds one match. To fix that we can use flags with our regex.
-
-
+            console.log(machesFound); 
         </script>
     </body>
 </html>

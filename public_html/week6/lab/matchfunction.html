@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Number</div>  
+        <input name="zip" type="text" size="100" value = "1 New England Tech Boulavard, 02818" />
+        <button>test</button>
+        
+        <script>
+            let btn = document.querySelector("button");
+            btn.addEventListener('click', check);
+
+            function check() {
+
+                let input = document.querySelector('input[name=zip]');
+                let div = document.querySelector('div');
+                var matches = input.value.match(/[0-9]{5}$/);
+
+                if (matches) {
+
+                    div.innerHTML='The Zip Code is ' + matches;
+
+                } else {
+
+                    div.innerHTML='null';
+
+
+                }
+            }
+
+        </script>
+    </body>
+</html>
