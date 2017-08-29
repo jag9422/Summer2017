@@ -15,7 +15,7 @@
         <h1>Let's Race!</h1>
         <canvas id="race" width="1000" height="150"></canvas>
         <br />
-        <button id="play">Play</button>
+        <button id="play" onclick="style.display = 'none'" >Play</button>
 
 
         <script type="text/javascript">
@@ -26,7 +26,7 @@
             var ctx = can.getContext('2d');
             var play = document.querySelector("#play");
 
-            
+
             var blueObj = {
                 'width': 70,
                 'height': 30,
@@ -36,14 +36,12 @@
 
             var redObj = {
                 'width': 70,
-                'height':30,
+                'height': 30,
                 'xaxis': 10,
                 'yaxis': 90
             };
 
             function finishLine() {
-
-
 
                 //finish line
                 window.ctx.beginPath();
@@ -84,17 +82,27 @@
 
 
             function start() {
-                
+
                 drawClear();
                 finishLine();
-                blueObj.xaxis+=randNum(20);
-                redObj.xaxis+=randNum(20);
+                blueObj.xaxis += randNum(20);
+                redObj.xaxis += randNum(20);
                 rectangles();
                 setTimeout(start, 100);
-                
-            }
 
-            play.addEventListener("click", start);
+                if (blueObj.xaxis <= 900 && redObj <= 900) {
+
+                    setTimeout(play, 50);
+
+                } else {
+                    reset();
+                }}
+                function reset() {
+
+                    window.blueobj = 0;
+                    window.redobj = 0;
+                }
+                play.addEventListener("click", start);
 
         </script>
     </body>
