@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             canvas {
-                border: 2px solid black;
+                border: 3px solid black;
             }
         </style>
     </head>
@@ -24,22 +24,35 @@
 
             var can = document.querySelector('#race');
             var ctx = can.getContext('2d');
+            var play = document.querySelector("#play");
 
-            ctx.fillStyle = "#FF0000";
-            var red = ctx.fillRect(10, 90, 70, 30);
-            ctx.stroke();
+            
+            var blueObj = {
+                'width': 70,
+                'height': 30,
+                'xaxis': 10,
+                'yaxis': 30
+            };
 
-            ctx.fillStyle = "#0000FF";
-            var blue = ctx.fillRect(10, 30, 70, 30);
-            ctx.stroke();
+            var redObj = {
+                'width': 70,
+                'height':30,
+                'xaxis': 10,
+                'yaxis': 90
+            };
 
-            window.ctx.beginPath();
-            window.ctx.moveTo(900, 0);
-            window.ctx.lineTo(900, 900);
-            window.ctx.lineTo(window.can.width, window.can.height);
-            window.ctx.stroke();
+            function finishLine() {
 
 
+
+                //finish line
+                window.ctx.beginPath();
+                window.ctx.moveTo(900, 0);
+                window.ctx.lineTo(900, 900);
+                window.ctx.lineTo(window.can.width, window.can.height);
+                window.ctx.stroke();
+
+            }
             function drawClear() {
                 window.ctx.clearRect(0, 0, window.can.width, window.can.height);
             }
@@ -55,14 +68,33 @@
                 return Math.ceil(Math.random() * max) + 1;
             }
 
-            function play() {
-                concole.log();
-                blueRect();
-                redRect();
+            function rectangles() {
+                //red rectangle
+                ctx.fillStyle = 'red';
+                ctx.fillRect(redObj.xaxis, 90, 70, 30);
+                ctx.stroke();
+
+
+                //blue rectangle
+                ctx.fillStyle = 'blue';
+                ctx.fillRect(blueObj.xaxis, 30, 70, 30);
+                ctx.stroke();
             }
 
 
 
+            function start() {
+                
+                drawClear();
+                finishLine();
+                blueObj.xaxis+=randNum(20);
+                redObj.xaxis+=randNum(20);
+                rectangles();
+                setTimeout(start, 100);
+                
+            }
+
+            play.addEventListener("click", start);
 
         </script>
     </body>
