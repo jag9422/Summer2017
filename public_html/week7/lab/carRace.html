@@ -83,26 +83,27 @@
 
             function start() {
 
-                drawClear();
-                finishLine();
-                blueObj.xaxis += randNum(20);
-                redObj.xaxis += randNum(20);
-                rectangles();
-                setTimeout(start, 100);
-
-                if (blueObj.xaxis <= 900 && redObj <= 900) {
+            drawClear();
+                    finishLine();
+                    blueObj.xaxis += randNum(20);
+                    redObj.xaxis += randNum(20);
+                    rectangles();
+                    setTimeout(start, 100);
+                    finish();
+                    if (blueObj.xaxis <= 900 && redObj <= 900) {
 
                     setTimeout(play, 50);
+            } else {
+            reset();
+            }
+            function reset() {
 
-                } else {
-                    reset();
-                }}
-                function reset() {
-
-                    window.blueobj = 0;
+            window.blueobj = 0;
                     window.redobj = 0;
-                }
-                play.addEventListener("click", start);
+            }}
+
+           
+            play.addEventListener("click", start);
 
         </script>
     </body>
