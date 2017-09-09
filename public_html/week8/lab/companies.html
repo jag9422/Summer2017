@@ -16,7 +16,6 @@
             var content = document.querySelector(".about");
             var myRequest = 'companies.json';
             var responsej;
-            let newDate = new Date();
 
 
 
@@ -60,10 +59,22 @@
                 {
                     names[i].addEventListener('click', function () {
                         let compIndex = this.id;
+                        let compDate = this.id;
+                        let date = window.responsej[compDate].registered;
+                        let dateObj = {
 
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            second: 'numeric'
 
-                        content.innerHTML = window.responsej[compIndex].about += "<p>" + window.responsej[compIndex].registered + "</p>" ;
-                       
+                        }
+                        let timeformat = new Date(date).toLocaleString("en-US", dateObj)
+                        content.innerHTML = window.responsej[compIndex].about += "<p>" + timeformat + "</p>";
+                        str += `<p> $(timeformat) </p>`;
 
                     });
                 }
