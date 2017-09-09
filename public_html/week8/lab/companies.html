@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="list"></div>
+        <div class="about"></div>
+        <script type="text/javascript">
+
+
+
+            var content = document.querySelector(".about");
+            var myRequest = 'companies.json';
+            var responsej;
+
+
+
+            fetch(myRequest).then(handleResponse)
+                    .then(responseSuccess)
+                    .catch(responseError);
+
+            function handleResponse(response) {
+                let contentType = response.headers.get("content-type");
+
+                if (contentType && contentType.includes("json")) {
+                    return response.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
+
+            function responseSuccess(json) {
+                window.responsej = json;
+                for (let x in json) {
+
+                    console.log(json);
+                    json[x].company;
+                }
+
+                var str = "";
+
+                for (let i = 0; i < window.responsej.length; i++)
+
+                {
+                    str += "<div id='" + i + "' class='company'>";
+                  
+                    str += window.responsej[i].company;
+                    
+                    str += "</div>";
+                }
+                document.querySelector(".list").innerHTML = str;
+                let names = document.querySelectorAll('.company');
+                for (let i = 0; i < names.length; i++)
+                {
+                    names[i].addEventListener('click', function () {
+                        let compIndex = this.id;
+                        
+                        
+                        content.innerHTML = window.responsej[compIndex].about;
+
+                    });
+                }
+
+
+
+            }
+
+
+            function responseError(error) {
+                content.innerHTML = error;
+            }
+
+        </script>
+    </body>
+</html>

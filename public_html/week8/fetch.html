@@ -6,19 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        
 
         <script>
                       
-            var myRequest = 'users.json'
+            var myRequest = 'users.json';
             
             fetch(myRequest)
             .then(function(response) {              
-                  return response.json()               
+                  return response.json();               
             })
             .then(function(json) { 
-                console.log(json)
-            })
+                console.log(json);
+            });
            
         </script>
     </body>
