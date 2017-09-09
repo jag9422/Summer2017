@@ -16,6 +16,7 @@
             var content = document.querySelector(".about");
             var myRequest = 'companies.json';
             var responsej;
+            let newDate = new Date();
 
 
 
@@ -46,20 +47,23 @@
 
                 {
                     str += "<div id='" + i + "' class='company'>";
-                  
+
                     str += window.responsej[i].company;
-                    
+
                     str += "</div>";
                 }
                 document.querySelector(".list").innerHTML = str;
+
                 let names = document.querySelectorAll('.company');
+
                 for (let i = 0; i < names.length; i++)
                 {
                     names[i].addEventListener('click', function () {
                         let compIndex = this.id;
-                        
-                        
-                        content.innerHTML = window.responsej[compIndex].about;
+
+
+                        content.innerHTML = window.responsej[compIndex].about += "<p>" + window.responsej[compIndex].registered + "</p>" ;
+                       
 
                     });
                 }
