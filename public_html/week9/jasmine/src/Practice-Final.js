@@ -55,7 +55,7 @@ function insertClassNameIntoInput() {
  */
 function buttonEvent() {
 
-    document.querySelector('button').addEventListener('click', function (e));
+    document.querySelector('button').addEventListener('click', function);
 
     
 

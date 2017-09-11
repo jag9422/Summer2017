@@ -12,20 +12,17 @@ and open the template in the editor.
     </head>
     <body>
         <script type = "text/javascript">
-            
-            
-            
+
+
+
             var arr = [];
-            for (let x = 0; x < 100; x++)
-            {
-            var myObject = 
-                'index': x,
-                'label': undefined
-        
-                
-            }
-       
-    
+            for (let x = 0; x < 100; x++) {
+                var myObject = {
+                    'index': x,
+                    'label': undefined
+                }
+
+
                 if (x % 2 === 0 && x % 3 === 0) {
                     console.log("fizz buzz");
                     myObject.label = "fizz buzz"
@@ -36,12 +33,13 @@ and open the template in the editor.
                     console.log("buzz");
                     myObject.label = "buzz"
                 } else {
-                    console.log("undefined");
+                    console.log(x);
                 }
+            }
+
+
             
 
-            console.log(x);
-            
 
         </script>
     </body>
