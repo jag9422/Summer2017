@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type = "text/javascript">
+
+
+
+            var arr = [];
+            for (let x = 0; x < 100; x++) {
+                var myObject = {
+                    'index': x,
+                    'label': undefined
+                }
+
+
+                if (x % 2 === 0 && x % 3 === 0) {
+                    console.log("fizz buzz");
+                    myObject.label = "fizz buzz"
+                } else if (x % 2 === 0) {
+                    console.log("fizz");
+                    myObject.label = "fizz"
+                } else if (x % 3 === 0) {
+                    console.log("buzz");
+                    myObject.label = "buzz"
+                } else {
+                    console.log(x);
+                }
+                arr.push(myObject);
+            }
+            
+            
+            console.log(arr);
+            
+
+
+        </script>
+    </body>
+</html>

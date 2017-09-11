@@ -63,6 +63,10 @@ function showCalendar(mth, yr) {
     str += `</div>`;
 
     $('#results').html(str);
+    
+    let days = document.querySelectorAll('day');
+    
+    for(let days =  );
 
 
 
