@@ -11,35 +11,53 @@ function returnJSON() {
                 name: "John Doe",
                 id: "0123456789"
 
-            };
-
+            }
     return person;
+}
+
+
+/**
+ * Given the input <input type="text" name="fullname" /> put a value of your choosing.
+ * 
+ * @return {String} The value
+ */
+function insertValueIntoInput() {
+
+    let element = document.querySelector('input');
+    element.classList.add('input');
+    element.value = "22";
+
+    return "22";
+
+}
+;
+
+/**
+ * Given the input <input type="text" name="fullname" /> put a class name of your choosing.
+ * 
+ * @return {String} The value
+ */
+function insertClassNameIntoInput() {
+
+    let element = document.querySelector('input');
+    element.classList.add('firstclass');
+
+
+    return "firstclass";
+
+}
+
+/**
+ * Given the HTML <button>Click ME</button> 
+ * When the click the button it should add a paragraph tag to the page
+ * 
+ * @return {void}
+ */
+function buttonEvent() {
+
+    document.querySelector('button').addEventListener('click', function (e));
+
     
-    /**
-     * Given the input <input type="text" name="fullname" /> put a value of your choosing.
-     * 
-     * @return {String} The value
-     */
-    function insertValueIntoInput() {
-
-    }
-
-    /**
-     * Given the input <input type="text" name="fullname" /> put a class name of your choosing.
-     * 
-     * @return {String} The value
-     */
-    function insertClassNameIntoInput() {
-
-    }
-
-    /**
-     * Given the HTML <button>Click ME</button> 
-     * When the click the button it should add a paragraph tag to the page
-     * 
-     * @return {void}
-     */
-    function buttonEvent() {
 
     }
 
