@@ -66,7 +66,7 @@ function showCalendar(mth, yr) {
     
     let days = document.querySelectorAll('day');
     
-    for(let days =  );
+    for (let days = ()  );
 
 
 
