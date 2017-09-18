@@ -41,7 +41,7 @@ function showCalendar(mth, yr) {
 
 
 
- for (let days = (1 - firstDayOfWeek); days <= numberOfDaysInMonth; days++) {
+    for (let days = (1 - firstDayOfWeek); days <= numberOfDaysInMonth; days++) {
 
         if (days > 0)
         {
@@ -63,20 +63,25 @@ function showCalendar(mth, yr) {
     str += `</div>`;
 
     $('#results').html(str);
-    
+
     let days = document.querySelectorAll('day');
-    
-    for (let days = ()  );
 
+    for (let days = (){
+        
+    }
+$("div").on("click", function () {
+    $('green');
+});
 
+$(document).on("dblclick", function () {
+    $('red');
+});
 
-}
+$(`#yes`).on('click', function () {
+    $('.day').css("background-color", "green");
+});
 
-$(`#yes`).on('click',function() {
-    $('.day').css("background-color", "green"); 
-}); 
-
-$(`#no`).on('click', function() {
-    $('.day').css("background-color", "red"); 
+$(`#no`).on('click', function () {
+    $('.day').css("background-color", "red");
 });
 
